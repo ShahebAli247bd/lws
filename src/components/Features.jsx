@@ -121,9 +121,12 @@ const CourseFeatures = () => {
   ];
 
   return (
-      <section className="p-6 text-white bg-gradient-to-r from-gray-950 to-gray-900">
-          <h1 className="mb-10 text-4xl font-bold text-center text-white">
-              Course{" "}
+      <section
+          id="features"
+          className="p-6 py-20 text-white bg-gradient-to-r from-gray-950 to-gray-900"
+      >
+          <h1 className="mb-10 text-3xl font-bold text-center text-white md:text-5xl">
+              {isToggled ? " কোর্সের" : " Course"}
               <span className="text-blue-500">
                   {" "}
                   <a
@@ -132,11 +135,10 @@ const CourseFeatures = () => {
                       rel="noopener noreferrer"
                       className="text-blue-500 rounded "
                   >
-                      Features
+                      {isToggled ? " বৈশিষ্ট্যসমূহ" : " Features"}
                   </a>
               </span>{" "}
-              in
-              {isToggled ? " Bangla" : " English"}{" "}
+              {isToggled ? " বাংলায়" : " in English"}{" "}
               <span className="items-center justify-center inline-block">
                   <button
                       className={`w-16 h-6 flex items-center rounded-full p-1 duration-300 ease-in-out transition-colors ${

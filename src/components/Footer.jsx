@@ -26,11 +26,14 @@ const Footer = () => {
           <div className="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-4">
               {/* Column 1 - Logo */}
               <div className="flex flex-col">
-                  <img src={logo} width={80} />
-                  <h1 className="text-3xl font-bold">Learn with shaheb</h1>
+                  <div className="flex gap-6">
+                      <img src={logo} width={80} />
+                      <h1 className="text-2xl font-bold">
+                          Learn with shaheb (LWS)
+                      </h1>
+                  </div>
                   <p className="mt-4">
-                      Master in Web & Email Template Design & Development
-                      <br />
+                      Master in Web & Email Template Design & Development,
                       9Years+ experience at Multinational Company.
                   </p>
               </div>
@@ -40,22 +43,31 @@ const Footer = () => {
                   <h2 className="mb-4 text-lg font-semibold">Quick Links</h2>
                   <ul>
                       <li className="mb-2 hover:text-lightblue">
-                          <a href="https://www.facebook.com/profile.php?id=61566628011805">
+                          <a
+                              href="https://www.facebook.com/profile.php?id=61566628011805"
+                              target="_blank"
+                          >
                               Facebook
                           </a>
                       </li>
                       <li className="mb-2 hover:text-lightblue">
-                          <a href="https://www.youtube.com/channel/UCx5UuLRD6I6PC9jHK8fnTSA">
+                          <a
+                              href="https://www.youtube.com/channel/UCx5UuLRD6I6PC9jHK8fnTSA"
+                              target="_blank"
+                          >
                               Youtube
                           </a>
                       </li>
                       <li className="mb-2 hover:text-lightblue">
-                          <a href="https://outsourcing-institute-bd-by-shaheb.blogspot.com/">
+                          <a
+                              href="https://outsourcing-institute-bd-by-shaheb.blogspot.com/"
+                              target="_blank"
+                          >
                               Blog
                           </a>
                       </li>
                       <li className="hover:text-lightblue">
-                          <a href="https://outsourcing-institute-bd-by-shaheb.blogspot.com/p/free-admission-details.html">
+                          <a href="https://shorturl.at/N9rIU" target="_blank">
                               Admission Details
                           </a>
                       </li>
@@ -67,18 +79,20 @@ const Footer = () => {
                   <h2 className="mb-4 text-lg font-semibold">Support</h2>
                   <ul>
                       <li className="mb-2 hover:text-lightblue">
-                          <a href="#faqs">FAQs</a>
+                          <a href="#faq">FAQs</a>
                       </li>
                       <li className="mb-2 hover:text-lightblue">
-                          <a href="https://outsourcing-institute-bd-by-shaheb.blogspot.com/p/edm-course-details.html">
+                          <a href="https://shorturl.at/Ef9Ev" target="_blank">
                               Course Curriculum
                           </a>
                       </li>
                       <li className="mb-2 hover:text-lightblue">
-                          <a href="#feedback">Feedback</a>
+                          <a href="#testimonial">Testimonials</a>
                       </li>
                       <li className="hover:text-lightblue">
-                          <a href="#privacy">Privacy Policy</a>
+                          <a href="https://shorturl.at/4Mdyz" target="_blank">
+                              Privacy Policy
+                          </a>
                       </li>
                   </ul>
               </div>
@@ -96,7 +110,7 @@ const Footer = () => {
                       />
                       <button
                           type="submit"
-                          className="flex bg-blue-600 items-center justify-center px-4 py-2 bg-primary rounded-r-md hover:bg-primary-dark"
+                          className="flex items-center justify-center px-4 py-2 bg-blue-600 bg-primary rounded-r-md hover:bg-primary-dark"
                       >
                           <FaPaperPlane className="text-white" />
                       </button>

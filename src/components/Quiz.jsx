@@ -327,14 +327,14 @@ const QuizApp = () => {
  
 
     return (
-        <div className="flex flex-col items-center justify-center pt-12 pb-12 text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
-            <h2 className="mb-12 text-4xl font-bold text-center">
+        <div id="quiz" className="flex flex-col items-center justify-center pt-12 pb-12 text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
+            <h2 className="mb-12 text-3xl font-bold text-center md:text-5xl">
                 Perticipate{" "}
                 <a
                     href={
-                        "https://outsourcing-institute-bd-by-shaheb.blogspot.com/p/online-quiz.html"
+                        "#quiz"
                     }
-                    target="_blank"
+                    
                     rel="noopener noreferrer"
                     className="text-blue-500 rounded "
                 >
