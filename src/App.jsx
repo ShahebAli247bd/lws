@@ -9,6 +9,7 @@ import HeroSection from "./components/HeroSection";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import QuizComponent from "./components/Quiz";
+import FAQ from "./components/Faq";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Testimonials />
 
       <QuizComponent />
+      <FAQ/>
       <Footer />
     </div>
   );

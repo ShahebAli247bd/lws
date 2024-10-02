@@ -343,6 +343,19 @@ const QuizApp = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
+            <h2 className="mt-12 text-4xl font-bold text-center">
+                Perticipate{" "}
+                <a
+                    href={
+                        "https://outsourcing-institute-bd-by-shaheb.blogspot.com/p/online-quiz.html"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 rounded "
+                >
+                    the Quiz
+                </a>
+            </h2>
             {step === 1 && (
                 <div className="w-full max-w-md p-6 text-gray-800 bg-white rounded-lg shadow-lg">
                     <h2 className="mb-4 text-2xl font-bold text-center text-blue-900">
@@ -500,25 +513,23 @@ const QuizApp = () => {
                     />
                 </div>
             )}
-            {
-                (step == 3 && results && (
-                    <div className="flex gap-4 p-2 m-2">
-                        {" "}
-                        <button
-                            onClick={downloadResultAsJPG}
-                            className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-green-600 rounded-lg shadow-md hover:bg-green-700 hover:scale-105"
-                        >
-                            Download as JPG
-                        </button>
-                        <button
-                            onClick={sendMailWithResult}
-                            className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-yellow-600 rounded-lg shadow-md hover:bg-yellow-700 hover:scale-105"
-                        >
-                            Email Results
-                        </button>
-                    </div>
-                ))
-            }
+            {step == 3 && results && (
+                <div className="flex gap-4 p-2 m-2">
+                    {" "}
+                    <button
+                        onClick={downloadResultAsJPG}
+                        className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-green-600 rounded-lg shadow-md hover:bg-green-700 hover:scale-105"
+                    >
+                        Download as JPG
+                    </button>
+                    <button
+                        onClick={sendMailWithResult}
+                        className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-yellow-600 rounded-lg shadow-md hover:bg-yellow-700 hover:scale-105"
+                    >
+                        Email Results
+                    </button>
+                </div>
+            )}
         </div>
     );
 };
