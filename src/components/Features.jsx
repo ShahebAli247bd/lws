@@ -121,53 +121,70 @@ const CourseFeatures = () => {
   ];
 
   return (
-    <section className="p-6 text-white bg-gradient-to-r from-gray-950 to-gray-900">
-      <h2 className="mb-10 text-3xl font-bold text-center text-white">
-        Course Features{" "}
-        <span className="inline-block items-center justify-center">
-          <button
-            className={`w-16 h-6 flex items-center rounded-full p-1 duration-300 ease-in-out transition-colors ${
-              isToggled ? "bg-green-500" : "bg-gray-400"
-            }`}
-            onClick={handleToggle}
-          >
-            <div
-              className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out ${
-                isToggled ? "translate-x-8" : "translate-x-0"
-              }`}
-            ></div>
-          </button>
-        </span>
-      </h2>
-      <div className="container grid grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
-        {isToggled &&
-          featuresBn.map((feature, index) => (
-            <div
-              key={index}
-              className="p-6 text-white transition transform rounded-lg shadow-lg bg-gradient-to-r to-gray-950 from-gray-900 hover:scale-105 hover:shadow-xl"
-            >
-              <div className="mb-4 text-5xl text-darkblueish">
-                {feature.icon}
-              </div>
-              <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
-              <p className="text-white">{feature.description}</p>
-            </div>
-          ))}
-        {!isToggled &&
-          featuresIn.map((feature, index) => (
-            <div
-              key={index}
-              className="p-6 text-white transition transform rounded-lg shadow-lg bg-gradient-to-r to-gray-950 from-gray-900 hover:scale-105 hover:shadow-xl"
-            >
-              <div className="mb-4 text-5xl text-darkblueish">
-                {feature.icon}
-              </div>
-              <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
-              <p className="text-white">{feature.description}</p>
-            </div>
-          ))}
-      </div>
-    </section>
+      <section className="p-6 text-white bg-gradient-to-r from-gray-950 to-gray-900">
+          <h1 className="mb-10 text-4xl font-bold text-center text-white">
+              Course{" "}
+              <span className="text-blue-500">
+                  {" "}
+                  <a
+                      href={"https://shorturl.at/A5NUi"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 rounded "
+                  >
+                      Features
+                  </a>
+              </span>{" "}
+              in
+              {isToggled ? " Bangla" : " English"}{" "}
+              <span className="items-center justify-center inline-block">
+                  <button
+                      className={`w-16 h-6 flex items-center rounded-full p-1 duration-300 ease-in-out transition-colors ${
+                          isToggled ? "bg-green-500" : "bg-gray-400"
+                      }`}
+                      onClick={handleToggle}
+                  >
+                      <div
+                          className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out ${
+                              isToggled ? "translate-x-8" : "translate-x-0"
+                          }`}
+                      ></div>
+                  </button>
+              </span>
+          </h1>
+          <div className="container grid grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
+              {isToggled &&
+                  featuresBn.map((feature, index) => (
+                      <div
+                          key={index}
+                          className="p-6 text-white transition transform rounded-lg shadow-lg bg-gradient-to-r to-gray-950 from-gray-900 hover:scale-105 hover:shadow-xl"
+                      >
+                          <div className="mb-4 text-5xl text-darkblueish">
+                              {feature.icon}
+                          </div>
+                          <h3 className="mb-2 text-xl font-semibold">
+                              {feature.title}
+                          </h3>
+                          <p className="text-white">{feature.description}</p>
+                      </div>
+                  ))}
+              {!isToggled &&
+                  featuresIn.map((feature, index) => (
+                      <div
+                          key={index}
+                          className="p-6 text-white transition transform rounded-lg shadow-lg bg-gradient-to-r to-gray-950 from-gray-900 hover:scale-105 hover:shadow-xl"
+                      >
+                          <div className="mb-4 text-5xl text-darkblueish">
+                              {feature.icon}
+                          </div>
+                          <h3 className="mb-2 text-xl font-semibold">
+                              {feature.title}
+                          </h3>
+                          <p className="text-white">{feature.description}</p>
+                      </div>
+                  ))}
+          </div>
+      </section>
   );
 };
 

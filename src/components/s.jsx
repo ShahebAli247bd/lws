@@ -15,176 +15,21 @@ const QuizApp = () => {
     const [results, setResults] = useState(null);
     const [userScore, setUserScore] = useState(0);
     const [ipBlocked, setIpBlocked] = useState(false); // IP blocking state
-     
+
     const questions = [
-        // HTML Questions
         {
-            question: "What does HTML stand for?",
-            options: [
-                "Hyper Text Markup Language",
-                "Hyperlinks and Text Markup Language",
-                "High-Level Text Markup Language",
-                "None of the above",
-            ],
-            answer: "Hyper Text Markup Language",
+            question: "What is React?",
+            options: ["Library", "Framework", "Language", "Tool"],
+            answer: "Library",
         },
         {
-            question: "Which tag is used to create a hyperlink in HTML?",
-            options: ["<link>", "<a>", "<href>", "<url>"],
-            answer: "<a>",
+            question: "What is JSX?",
+            options: ["JavaScript", "HTML", "React", "XML"],
+            answer: "XML",
         },
-        {
-            question:
-                "What is the correct HTML element for inserting a line break?",
-            options: ["<br>", "<lb>", "<break>", "<newline>"],
-            answer: "<br>",
-        },
-        {
-            question:
-                "Which attribute is used to specify the URL of the page the link goes to?",
-            options: ["url", "src", "href", "link"],
-            answer: "href",
-        },
-        {
-            question: "What is the purpose of the <head> tag in HTML?",
-            options: [
-                "To contain the main content of the document",
-                "To provide metadata about the document",
-                "To create a header section on the page",
-                "To link external stylesheets",
-            ],
-            answer: "To provide metadata about the document",
-        },
-
-        // CSS Questions
-        {
-            question: "What does CSS stand for?",
-            options: [
-                "Cascading Style Sheets",
-                "Computer Style Sheets",
-                "Creative Style Sheets",
-                "Colorful Style Sheets",
-            ],
-            answer: "Cascading Style Sheets",
-        },
-        {
-            question:
-                "Which property is used to change the background color in CSS?",
-            options: ["color", "bgcolor", "background-color", "background"],
-            answer: "background-color",
-        },
-        {
-            question: "How do you apply a CSS class to an HTML element?",
-            options: [
-                "<element class='classname'>",
-                "<element style='classname'>",
-                "<element id='classname'>",
-                "<element type='classname'>",
-            ],
-            answer: "<element class='classname'>",
-        },
-        {
-            question: "Which CSS property controls the text size?",
-            options: ["font-size", "text-size", "font-style", "text-style"],
-            answer: "font-size",
-        },
-        {
-            question:
-                "What is the correct CSS syntax to change the font of an element?",
-            options: [
-                "font-family: Arial;",
-                "font: Arial;",
-                "text-font: Arial;",
-                "font-style: Arial;",
-            ],
-            answer: "font-family: Arial;",
-        },
-
-        // Basic Computer Knowledge Questions
-        {
-            question: "What is the main function of the CPU?",
-            options: [
-                "To store data",
-                "To perform calculations and process instructions",
-                "To connect to the internet",
-                "To display graphics",
-            ],
-            answer: "To perform calculations and process instructions",
-        },
-        {
-            question: "Which of the following is an operating system?",
-            options: ["Microsoft Word", "Windows", "Chrome", "Excel"],
-            answer: "Windows",
-        },
-        {
-            question: "What does RAM stand for?",
-            options: [
-                "Read Access Memory",
-                "Random Access Memory",
-                "Ready Access Memory",
-                "Rapid Access Memory",
-            ],
-            answer: "Random Access Memory",
-        },
-        {
-            question: "Which device is used to input data into a computer?",
-            options: ["Monitor", "Printer", "Keyboard", "Speaker"],
-            answer: "Keyboard",
-        },
-        {
-            question: "What is phishing?",
-            options: [
-                "A technique to catch fish",
-                "A method of attempting to acquire sensitive information by masquerading as a trustworthy entity",
-                "A type of software",
-                "A way to enhance security",
-            ],
-            answer: "A method of attempting to acquire sensitive information by masquerading as a trustworthy entity",
-        },
-        {
-            question: "Which of the following is a programming language?",
-            options: ["HTML", "CSS", "JavaScript", "All of the above"],
-            answer: "JavaScript",
-        },
-        {
-            question: "What does URL stand for?",
-            options: [
-                "Uniform Resource Locator",
-                "Universal Resource Locator",
-                "Uniform Resource Link",
-                "Universal Resource Link",
-            ],
-            answer: "Uniform Resource Locator",
-        },
-        {
-            question: "Which of the following is not a computer network?",
-            options: ["LAN", "WAN", "MAN & PAN", "All"],
-            answer: "All",
-        },
-        {
-            question: "What is the purpose of antivirus software?",
-            options: [
-                "To speed up the computer",
-                "To prevent malware infections",
-                "To enhance graphics",
-                "To manage memory",
-            ],
-            answer: "To prevent malware infections",
-        },
-        {
-            question: "Which of the following is a web browser?",
-            options: [
-                "Google Chrome",
-                "Microsoft Word",
-                "Photoshop",
-                "PowerPoint",
-            ],
-            answer: "Google Chrome",
-        },
+        // Add more questions here
     ];
 
-   
-    
     useEffect(() => {
         const previousResult = localStorage.getItem("quizResult");
         const userIP = localStorage.getItem("userIP");
@@ -342,7 +187,7 @@ const QuizApp = () => {
     // }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
+        <div className="flex flex-col items-center justify-center min-h-screen text-white quiz-container bg-gradient-to-b from-blue-900 to-blue-500">
             {step === 1 && (
                 <div className="w-full max-w-md p-6 text-gray-800 bg-white rounded-lg shadow-lg">
                     <h2 className="mb-4 text-2xl font-bold text-center text-blue-900">
@@ -452,35 +297,21 @@ const QuizApp = () => {
                     id="quiz-section"
                     className="w-full max-w-2xl p-6 mt-8 text-gray-800 bg-white rounded-lg shadow-lg"
                 >
-                    <div className="flex items-center justify-center">
-                        <div className="w-full max-w-md text-center rounded-lg shadow-lg ">
-                            <h2 className="mb-4 text-3xl font-bold text-green-600">
-                                {results?.score >= 50
-                                    ? "Congratulations!"
-                                    : "O Sorry, My Bad!"}
-                            </h2>
-                            <p className="mb-4 text-lg">
-                                {results?.score >= 50
-                                    ? `You Passed! Your scored  ${results?.score} % in the quiz. Great job! Your are Eligible, Enroll now`
-                                    : `Unfortunately You didnot pass the Quiz, You got ${results?.score} % in the quiz. Try again from another Browser!`}
-                            </p>
-                        </div>
-                    </div>
                     <h2 className="mb-4 text-2xl font-bold text-blue-900">
                         Quiz Results
                     </h2>
                     <div id="result-section">
                         <p className="mb-2 text-lg font-bold">
-                            Name: {results?.userInfo.name}
+                            Name: {results.userInfo.name}
                         </p>
                         <p className="mb-2 text-lg font-bold">
-                            Email: {results?.userInfo.email}
+                            Email: {results.userInfo.email}
                         </p>
                         <p className="mb-2 text-lg font-bold">
-                            Phone: {results?.userInfo.phone}
+                            Phone: {results.userInfo.phone}
                         </p>
                         <p className="mb-2 text-lg font-bold">
-                            Score: {results?.score}%
+                            Score: {results.score}%
                         </p>
                     </div>
 
@@ -488,37 +319,32 @@ const QuizApp = () => {
                         chartType="PieChart"
                         data={[
                             ["Result", "Percentage"],
-                            ["Correct", results?.score],
-                            ["Incorrect", 100 - results?.score],
+                            ["Correct", results.score],
+                            ["Incorrect", 100 - results.score],
                         ]}
                         options={{
                             title: "Quiz Results",
                             pieHole: 0.4,
                         }}
                         width="100%"
-                        height="300px"
+                        height="400px"
                     />
+
+                    <button
+                        onClick={downloadResultAsJPG}
+                        className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-green-600 rounded-lg shadow-md hover:bg-green-700 hover:scale-105"
+                    >
+                        Download as JPG
+                    </button>
+
+                    <button
+                        onClick={sendMailWithResult}
+                        className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-yellow-600 rounded-lg shadow-md hover:bg-yellow-700 hover:scale-105"
+                    >
+                        Email Results
+                    </button>
                 </div>
             )}
-            {
-                (step == 3 && results && (
-                    <div className="flex gap-4 p-2 m-2">
-                        {" "}
-                        <button
-                            onClick={downloadResultAsJPG}
-                            className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-green-600 rounded-lg shadow-md hover:bg-green-700 hover:scale-105"
-                        >
-                            Download as JPG
-                        </button>
-                        <button
-                            onClick={sendMailWithResult}
-                            className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-yellow-600 rounded-lg shadow-md hover:bg-yellow-700 hover:scale-105"
-                        >
-                            Email Results
-                        </button>
-                    </div>
-                ))
-            }
         </div>
     );
 };

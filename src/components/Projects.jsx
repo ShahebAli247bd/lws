@@ -1,69 +1,61 @@
 import React, { useState } from "react";
+import p1 from "../assets/thumbnail/project-1.jpg"
+import p2 from "../assets/thumbnail/project-2.jpg"
+import p3 from "../assets/thumbnail/project-3.jpg"
+import p4 from "../assets/thumbnail/project-4.jpg"
+import p5 from "../assets/thumbnail/project-5.jpg"
+import p6 from "../assets/thumbnail/project-6.jpg"
+ 
 
 // Sample project data
 const projects = [
     {
         id: 1,
-        title: "Project 1",
-        image: "https://via.placeholder.com/300x200", // Replace with your project image URL
-        description: "Description of Project 1.",
-        demoLink: "https://example.com/project1", // Replace with your project demo link
+        title: "The Dream Comes to Life",
+        image: p1, // Replace with your project image URL
+        description:
+            "Strategies and tips for crafting engaging and effective emails that drive results.",
+        demoLink: "https://shorturl.at/5w750", // Replace with your project demo link
     },
     {
         id: 2,
-        title: "Project 2",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 2.",
-        demoLink: "https://example.com/project2",
+        title: "Boost with Blush",
+        image: p2,
+        description:
+            "Create dope emails easily and fast! Install the Blush plugin to customize all the illustrations.",
+        demoLink: "https://shorturl.at/ogqql",
     },
     {
         id: 3,
-        title: "Project 3",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 3.",
-        demoLink: "https://example.com/project3",
+        title: "Design & Development Course",
+        image: p3,
+        description:
+            "Learn to develop hand-coded, responsive, dark mode compatible emails. Register now!",
+        demoLink: "https://shorturl.at/QL9fU",
     },
     {
         id: 4,
-        title: "Project 4",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 4.",
-        demoLink: "https://example.com/project4",
+        title: "Welcome to LWS",
+        image: p4,
+        description:
+            "Handcrafted sushi with a creative flair, offering an experience beyond traditional takeout.",
+        demoLink: "https://shorturl.at/avtF7",
     },
     {
         id: 5,
-        title: "Project 5",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 5.",
-        demoLink: "https://example.com/project5",
+        title: "Make Content About It! Portfolio Project",
+        image: p5,
+        description:
+            "Crafting professional-grade email templates for esteemed clients, delivering high-quality services.",
+        demoLink: "https://shorturl.at/Mt3Ji",
     },
     {
         id: 6,
-        title: "Project 6",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 6.",
-        demoLink: "https://example.com/project6",
-    },
-    {
-        id: 7,
-        title: "Project 7",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 7.",
-        demoLink: "https://example.com/project7",
-    },
-    {
-        id: 8,
-        title: "Project 8",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 8.",
-        demoLink: "https://example.com/project8",
-    },
-    {
-        id: 9,
-        title: "Project 9",
-        image: "https://via.placeholder.com/300x200",
-        description: "Description of Project 9.",
-        demoLink: "https://example.com/project9",
+        title: "Dreaming of Sushi",
+        image: p6,
+        description:
+            "Book faster using the Jiro Sushi app and enjoy traditional sushi with ease.",
+        demoLink: "https://shorturl.at/fDnS9",
     },
 ];
 
@@ -81,8 +73,16 @@ const ProjectSection = () => {
     return (
         <section className="p-6 py-20 text-white bg-gradient-to-r to-gray-950 from-gray-900">
             <div className="px-4 mx-auto ">
-                <h2 className="mb-12 text-4xl font-bold text-center">
-                    Projects to be Done
+                <h2 className="mb-12 text-4xl font-bold text-center">All { " " } 
+                    <a
+                        href={
+                            "https://outsourcing-institute-bd-by-shaheb.blogspot.com/2024/09/email-template-for-blasting.html"
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 rounded "
+                    >Projects </a> 
+                    to be Done
                 </h2>
                 <div className="container grid grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project) => (

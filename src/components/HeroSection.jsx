@@ -96,7 +96,7 @@ const HeroSection = () => {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full py-2 mt-6 text-white transition bg-green-500 rounded hover:bg-green-600"
+            className="w-auto px-6 py-4 mt-6 text-white transition bg-green-500 rounded-full hover:bg-green-600"
           >
             Enroll Now
           </button>
