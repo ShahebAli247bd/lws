@@ -69,7 +69,10 @@ const HeroSection = () => {
     };
 
     return (
-        <section id="home" className="relative flex flex-col-reverse items-center justify-between px-4 pt-40 pb-12 mx-auto overflow-hidden md:h-screen md:flex-row bg-gradient-to-r from-gray-900 to-gray-950">
+        <section
+            id="home"
+            className="relative flex flex-col-reverse items-center justify-between px-4 pt-40 pb-12 mx-auto overflow-hidden md:h-screen md:flex-row bg-gradient-to-r from-gray-900 to-gray-950"
+        >
             <div
                 className="absolute inset-0 bg-center bg-cover opacity-40"
                 style={{
@@ -86,7 +89,7 @@ const HeroSection = () => {
                     >
                         <iframe
                             className="absolute top-0 left-0 w-full h-full rounded"
-                            src="https://www.youtube.com/embed/TouoUAHucG0" // Replace with your video URL
+                            src="https://www.youtube.com/embed/mVs_Uq9Cw6E" // Replace with your video URL
                             frameBorder="0"
                             allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
