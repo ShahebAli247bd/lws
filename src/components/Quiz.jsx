@@ -324,26 +324,11 @@ const QuizApp = () => {
             }
         }, 2000);
     };
-
-    // if (ipBlocked) {
-    //     return (
-    //         <div className="flex flex-col items-center justify-center min-h-screen text-white quiz-container bg-gradient-to-b from-blue-900 to-blue-500">
-    //             <h1 className="text-3xl font-bold">
-    //                 You've already taken the quiz!
-    //             </h1>
-    //             <button
-    //                 onClick={() => setStep(2)} // Go to results
-    //                 className="px-4 py-2 mt-4 font-bold text-white transition-transform duration-200 transform bg-yellow-600 rounded-lg shadow-md hover:bg-yellow-700 hover:scale-105"
-    //             >
-    //                 View Your Quiz Results
-    //             </button>
-    //         </div>
-    //     );
-    // }
+ 
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
-            <h2 className="mt-12 text-4xl font-bold text-center">
+        <div className="flex flex-col items-center justify-center pt-12 pb-12 text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
+            <h2 className="mb-12 text-4xl font-bold text-center">
                 Perticipate{" "}
                 <a
                     href={
