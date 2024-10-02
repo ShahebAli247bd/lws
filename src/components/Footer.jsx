@@ -52,7 +52,7 @@ const Footer = () => {
                       </li>
                       <li className="mb-2 hover:text-lightblue">
                           <a
-                              href="https://www.youtube.com/channel/UCx5UuLRD6I6PC9jHK8fnTSA"
+                              href="https://www.youtube.com/@learnwithshaheb"
                               target="_blank"
                           >
                               Youtube
