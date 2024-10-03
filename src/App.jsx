@@ -10,11 +10,14 @@ import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import QuizComponent from "./components/Quiz";
 import FAQ from "./components/Faq";
+import FacebookPixel from './tracking/FacebookPixel';
 
 function App() {
   return (
     <div className="text-black bg-white dark:bg-gray-900 dark:text-white">
+      
       <Navbar />
+      <FacebookPixel />
       <HeroSection />
       <Features />
       <Projects />
