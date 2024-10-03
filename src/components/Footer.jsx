@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import sendEmail from "./EmailJS";
 import logo from "./../assets/logo.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -15,9 +17,13 @@ const Footer = () => {
     // Dummy submission (you can use an API like EmailJS or a backend here)
     if (email) {
       await sendEmail(email);
-      setEmail("");
+        setEmail("");
+         
     } else {
-      alert("Please enter a valid email.");
+         toast.error("Please enter a valid email.", {
+             position: "top-right", // Updated to string format
+         });
+     
     }
   };
 
@@ -26,8 +32,8 @@ const Footer = () => {
           <div className="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-4">
               {/* Column 1 - Logo */}
               <div className="flex flex-col">
-                  <div className="flex gap-6">
-                      <img src={logo} width={80} />
+                  <div className="flex gap-4">
+                      <img src={logo} width={20} height="auto" className="w-auto h-16" />
                       <h1 className="text-2xl font-bold">
                           Learn with shaheb (LWS)
                       </h1>
@@ -122,6 +128,8 @@ const Footer = () => {
           <div className="mt-8 text-center text-gray-400">
               &copy; 2024 Learn with Shaheb. All Rights Reserved.
           </div>
+          {/* Toast Container */}
+          <ToastContainer />
       </footer>
   );
 };

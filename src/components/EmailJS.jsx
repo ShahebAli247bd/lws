@@ -1,5 +1,7 @@
 import emailjs from "emailjs-com";
-import { useState } from "react";
+ 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const sendEmail = (email) => {
     // e.preventDefault();
@@ -18,17 +20,25 @@ const sendEmail = (email) => {
                 "9RfB8L3zVRRfMB18w"
             )
             .then((result) => {
-                alert(`Congratulation! Subscription done, We received your subscription as a ${email}`);
-             
-               
+                 toast.success(
+                     `Congratulation! You Subscribe as a ${email}`,
+                     {
+                         position: "top-right", // Updated to string format
+                     }
+                 );
+              
             })
             .catch((error) => {
-                console.error("Failed to send email:", error);
-                alert("Failed to send email.");
+                  toast.error("Failed to send email.", {
+                      position: "top-right", // Updated to string format
+                  });
+               
             });
     } 
       else {
-      alert("Please enter a valid email.");
+        toast.error("Please enter a valid email.", {
+            position: "top-right", // Updated to string format
+        });
   }
 };
 
