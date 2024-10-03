@@ -13,68 +13,70 @@ const FAQ = () => {
         }
     };
 
-    const faqData = [
-        {
-            question: {
-                en: "How to complete the admission process?",
-                bn: "ভর্তি প্রক্রিয়া কীভাবে সম্পন্ন করতে হবে?",
-            },
-            answer: {
-                en: "To complete the admission process, you first need to fill out the free registration form. After that, your application will be verified, and a confirmation message will be sent.",
-                bn: "ভর্তি প্রক্রিয়া সম্পন্ন করতে প্রথমে বিনামূল্যে রেজিস্ট্রেশন ফরম পূরণ করতে হবে। এরপর আপনার আবেদন যাচাই করে ভর্তি নিশ্চিতকরণ বার্তা পাঠানো হবে।",
-            },
-        },
-        {
-            question: {
-                en: "What will be the content of the course?",
-                bn: "কোর্সের বিষয়বস্তু কি কি থাকবে?",
-            },
-            answer: {
-                en: "This course will include strategies for outsourcing, freelancing, working on Fiverr and Upwork, skill development, and ways to earn.",
-                bn: "এই কোর্সে আউটসোর্সিং, ফ্রিল্যান্সিং, ফাইভার ও আপওয়ার্কে কাজ করার কৌশল, স্কিল ডেভেলপমেন্ট এবং আয়ের উপায় অন্তর্ভুক্ত থাকবে।",
-            },
-        },
-        {
-            question: {
-                en: "What will the class schedule look like?",
-                bn: "ক্লাসের সময়সূচি কেমন হবে?",
-            },
-            answer: {
-                en: "Classes will be held online every Saturday and Sunday. The course will start at 9 PM and end at 10:30 PM.",
-                bn: "ক্লাসগুলো প্রতি শনিবার ও রবিবার অনলাইনে অনুষ্ঠিত হবে। নির্ধারিত সময়ের সাপেক্ষে কোর্স শুরু হবে রাত ৯টা থেকে ১০:৩০টা পর্যন্ত।",
-            },
-        },
-        {
-            question: {
-                en: "Tell us about the course mentor.",
-                bn: "কোর্স মেন্টর সম্পর্কে কিছু বলুন।",
-            },
-            answer: {
-                en: "The course mentor is an experienced freelancer who has been working on Fiverr, Upwork, and other platforms for over 10 years. He is skilled in outsourcing and will provide the necessary guidance to students.",
-                bn: "কোর্সের মেন্টর একজন অভিজ্ঞ ফ্রিল্যান্সার যিনি বিগত ১০ বছরেরও বেশি সময় ধরে ফাইভার, আপওয়ার্ক এবং অন্যান্য প্ল্যাটফর্মে কাজ করছেন। তিনি আউটসোর্সিংয়ে দক্ষ এবং শিক্ষার্থীদের প্রয়োজনীয় দিকনির্দেশনা প্রদান করবেন।",
-            },
-        },
-        {
-            question: {
-                en: "What is the course fee?",
-                bn: "কোর্স ফি কত?",
-            },
-            answer: {
-                en: "This course is completely free. However, a certificate will be provided for those who successfully complete the course.",
-                bn: "এই কোর্সটি সম্পূর্ণ বিনামূল্যে। তবে যারা কোর্স সফলভাবে শেষ করবেন, তাদের জন্য সনদ প্রদান করা হবে।",
-            },
-        },
-        {
-            question: {
-                en: "Are there job opportunities after the course?",
-                bn: "কোর্স শেষে কি চাকরির সুযোগ রয়েছে?",
-            },
-            answer: {
-                en: "After the course, you will be able to freelance based on your skills. In some cases, there may be opportunities to work directly with outsourcing companies.",
-                bn: "কোর্স শেষে আপনি আপনার দক্ষতার ভিত্তিতে ফ্রিল্যান্সিং করতে পারবেন। এছাড়া, কিছু ক্ষেত্রে আউটসোর্সিং প্রতিষ্ঠানের সাথে সরাসরি কাজ করার সুযোগ থাকতে পারে।",
-            },
-        },
-    ];
+ const faqData = [
+     {
+         question: {
+             en: "How to complete the admission process?",
+             bn: "ভর্তি প্রক্রিয়া কীভাবে সম্পন্ন করতে হবে?",
+         },
+         answer: {
+             en: "To complete the admission process, if you're looking for a significant scholarship, you'll need to pass the quiz and submit your email. Once that's done, fill out the registration form and submit it. We will verify your application, and you’ll receive a confirmation message soon.",
+             bn: "ভর্তি প্রক্রিয়া সম্পন্ন করতে হলে, আপনি যদি উল্লেখযোগ্য বৃত্তি পেতে চান তাহলে আপনাকে কুইজে পাস করে ইমেইল পাঠাতে হবে ইমেল বাটনে ক্লিক করে। এরপর রেজিস্ট্রেশন ফরম পূরণ করে জমা দিতে হবে। আমরা আপনার আবেদন যাচাই করব এবং শীঘ্রই আপনাকে নিশ্চিতকরণ বার্তা পাঠানো হবে।",
+         },
+     },
+     {
+         question: {
+             en: "What will be the content of the course?",
+             bn: "কোর্সের বিষয়বস্তু কি কি থাকবে?",
+         },
+         answer: {
+             en: "To learn more, check out our detailed blog post https://shorturl.at/zeLXy here. You’ll find everything you need to know about the course!",
+             bn: "আরও জানতে, আমাদের বিস্তারিত ব্লগ পোস্ট https://shorturl.at/zeLXy এখানে দেখুন। আপনি কোর্স সম্পর্কে সবকিছু জানতে পারবেন!",
+         },
+     },
+     {
+         question: {
+             en: "What will the class schedule look like?",
+             bn: "ক্লাসের সময়সূচি কেমন হবে?",
+         },
+         answer: {
+             en: "Classes will be held online every Saturday and Sunday, starting at 9 PM and ending at 10:30 PM. Depending on the content, some sessions may go slightly over time, but we’ll make sure you get all the knowledge you need!",
+             bn: "ক্লাসগুলো প্রতি শনিবার ও রবিবার অনলাইনে অনুষ্ঠিত হবে, রাত ৯টা থেকে শুরু হয়ে ১০:৩০টা পর্যন্ত চলবে। বিষয়বস্তুর ওপর নির্ভর করে কিছু সেশন সময়ের চেয়ে কিছুটা বেশি সময় নিতে পারে, তবে আমরা নিশ্চিত করব আপনি প্রয়োজনীয় সব জ্ঞান পাবেন!",
+         },
+     },
+     {
+         question: {
+             en: "Tell us about the course mentor.",
+             bn: "কোর্স মেন্টর সম্পর্কে কিছু বলুন।",
+         },
+         answer: {
+             en: "Our mentor is a highly experienced professional, having worked for over a decade on freelancing platforms like Fiverr, and for global brands such as DELL, MICROSOFT, WUNDERMAN, and more. With expertise in industry standards and outsourcing, you’ll be learning from the best.",
+             bn: "আমাদের মেন্টর একজন অত্যন্ত অভিজ্ঞ পেশাদার, যিনি দশ বছরেরও বেশি সময় ধরে ফ্রিল্যান্সিং প্ল্যাটফর্ম যেমন ফাইভার, এবং ডেল, মাইক্রোসফট, ওয়ান্ডারম্যান এবং আরও অনেক বৈশ্বিক ব্র্যান্ডের জন্য কাজ করেছেন। শিল্প মান এবং আউটসোর্সিংয়ে দক্ষতার সাথে, আপনি সেরা থেকে শিখবেন।",
+         },
+     },
+     {
+         question: {
+             en: "What is the course fee?",
+             bn: "কোর্স ফি কত?",
+         },
+         answer: {
+             en: "This course is valued at approximately 4000 BDT, but we offer two options. For the live course, it's just 500 BDT. For the comprehensive package, which includes full mentorship support, access to EDM development software, and an excellence certificate, it’s only 1000 BDT. Incredible value for your career growth!",
+             bn: "এই কোর্সের মূল্য প্রায় ৪০০০ টাকা, তবে আমরা দুটি বিকল্প দিচ্ছি। লাইভ কোর্সের জন্য এটি মাত্র ৫০০ টাকা। সম্পূর্ণ মেন্টরশিপ সহায়তা, ইডিএম ডেভেলপমেন্ট সফটওয়্যার এবং শ্রেষ্ঠত্ব সনদসহ সম্পূর্ণ প্যাকেজের জন্য এটি মাত্র ১০০০ টাকা। আপনার ক্যারিয়ার বৃদ্ধির জন্য অবিশ্বাস্য মূল্য!",
+         },
+     },
+     {
+         question: {
+             en: "Are there job opportunities after the course?",
+             bn: "কোর্স শেষে কি চাকরির সুযোগ রয়েছে?",
+         },
+         answer: {
+             en: "After completing the course, you'll be ready to freelance based on your new skills. In some cases, there may be opportunities to work directly with outsourcing companies or remotely as an email template developer, designer, or expert in Figma and Photoshop. We’ll provide all the guidance you need.",
+             bn: "কোর্স সম্পন্ন করার পর, আপনি আপনার নতুন দক্ষতার ভিত্তিতে ফ্রিল্যান্সিং করতে প্রস্তুত হবেন। কিছু ক্ষেত্রে, আউটসোর্সিং কোম্পানি বা রিমোট কোম্পানির সাথে সরাসরি কাজ করার সুযোগও থাকতে পারে, যেমন ইমেইল টেমপ্লেট ডেভেলপার, ডিজাইনার, বা ফিগমা এবং ফটোশপ বিশেষজ্ঞ হিসাবে। আমরা আপনাকে প্রয়োজনীয় সমস্ত নির্দেশনা প্রদান করব।",
+         },
+     },
+ ];
+
+
 
     const toggleLanguage = () => {
         setLanguage((prev) => (prev === "en" ? "bn" : "en"));
