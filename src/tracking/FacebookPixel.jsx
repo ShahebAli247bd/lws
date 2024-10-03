@@ -27,6 +27,11 @@ const FacebookPixel = () => {
         );
         fbq("init", "3326218081018142");
         fbq("track", "PageView");
+        fbq("track", "Contact");
+        fbq("track", "CompleteRegistration");
+        fbq("track", "Lead");
+        fbq("track", "SubmitApplication");
+        fbq("track", "ViewContent");
 
         <noscript>
             <img
