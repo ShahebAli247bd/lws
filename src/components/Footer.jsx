@@ -111,7 +111,7 @@ const Footer = () => {
               {/* Column 4 - Subscription Form */}
               <div className="flex flex-col">
                   <h2 className="mb-4 text-lg font-semibold">Stay Updated</h2>
-                  <form onSubmit={handleSubmit} className="flex lg:hidden">
+                  <form onSubmit={handleSubmit} className="hidden md:flex lg:hidden">
                       <input
                           type="email"
                           value={email}
@@ -127,7 +127,7 @@ const Footer = () => {
                       </button>
                   </form>
                      
-                  <div className="klaviyo-form-UYwssf"></div>
+                  <div className="flex klaviyo-form-UYwssf md:hidden lg:flex"></div>
               </div>
           </div>
 
