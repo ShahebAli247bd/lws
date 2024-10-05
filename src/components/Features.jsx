@@ -138,7 +138,7 @@ const CourseFeatures = () => {
                       {isToggled ? " বৈশিষ্ট্যসমূহ" : " Features"}
                   </a>
               </span>{" "}
-              {isToggled ? " বাংলায়" : " in English"}{" "}
+             
               <span className="items-center justify-center inline-block">
                   <button
                       className={`w-16 h-6 flex items-center rounded-full p-1 duration-300 ease-in-out transition-colors ${

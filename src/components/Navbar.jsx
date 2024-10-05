@@ -88,7 +88,8 @@ const Header = () => {
                     >
                         Testimonials
                     </ScrollLink>
-                    <ScrollLink
+                    {/**
+                       <ScrollLink
                         to="quiz"
                         smooth={true}
                         duration={500}
@@ -96,7 +97,7 @@ const Header = () => {
                         className="text-white cursor-pointer dark:text-white hover:text-lightblue"
                     >
                         Quiz
-                    </ScrollLink>
+                    </ScrollLink>*/}
                     <ScrollLink
                         to="faq"
                         smooth={true}
@@ -181,6 +182,7 @@ const Header = () => {
                         >
                             Testimonials
                         </ScrollLink>
+                        {/**
                         <ScrollLink
                             to="quiz"
                             smooth={true}
@@ -191,6 +193,7 @@ const Header = () => {
                         >
                             Quiz
                         </ScrollLink>
+                        */}
                         <ScrollLink
                             to="faq"
                             smooth={true}

@@ -3,112 +3,17 @@ import emailjs from "emailjs-com";
 import Modal from "./Modal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ModalParent from "./ModalParent";
+import {courses} from '../data/Course'
 
-const PricingSection = () => {
+const Pricing = () => {
     const [isToggled, setIsToggled] = useState(false);
 
     const handleToggle = () => {
         setIsToggled(!isToggled);
     };
 
-    const courses = [
-        {
-            id: 1,
-            title: {
-                en: "Live Class",
-                bn: "লাইভ ক্লাস",
-            },
-            priceBefore: {
-                en: "4000/-",
-                bn: "৪০০০/-",
-            },
-            priceNow: {
-                en: "500/-",
-                bn: "500/-",
-            },
-            features: {
-                en: [
-                    "2-month comprehensive course",
-                    "5 projects: From design to HTML & CSS conversion",
-                    "Live classes",
-                    "Real-time problem solving",
-                    "Hands-on training on email marketing platforms",
-                    "Dark Mode & Accessibility fixes",
-                    "Personal portfolio template creation",
-                    "Recorded videos (❌)",
-                    "VS Code Plugin & Chrome Extension provided (❌)",
-                    "LinkedIn client hunting training (❌)",
-                    "Exclusive certificate for successful candidates! (❌)",
-                ],
-                bn: [
-                    "২ মাসের কম্প্রিহেনসিভ কোর্স",
-                    "৫টি প্রোজেক্ট: ডিজাইন থেকে HTML & CSS-এ রূপান্তর",
-                    "লাইভ ক্লাস",
-                    "রিয়েল-টাইম সমস্যা সমাধান",
-                    "ইমেইল মার্কেটিং প্ল্যাটফর্মে হ্যান্ডস-অন ট্রেনিং",
-                    "Dark Mode & Accessibility ফিক্সিং",
-                    "ব্যক্তিগত পোর্টফোলিও টেমপ্লেট তৈরি",
-                    "রেকর্ডেড ভিডিও (❌)",
-                    "VS Code Plugin & Chrome Extension প্রদান (❌)",
-                    "LinkedIn থেকে ক্লায়েন্ট হান্টিং শিখানো হবে (❌)",
-                    "এক্সক্লুসিভ সার্টিফিকেট সফলদের জন্য! (❌)",
-                ],
-            },
-            buttonText: {
-                en: "Enroll Now",
-                bn: "এখন নিবন্ধন করুন",
-            },
-            buttonClass: "bg-blue-500 hover:bg-blue-600",
-        },
-        {
-            id: 2,
-            title: {
-                en: "Comprehensive Course",
-                bn: "কম্প্রিহেনসিভ কোর্স",
-            },
-            priceBefore: {
-                en: "4000/-",
-                bn: "৪০০০/-",
-            },
-            priceNow: {
-                en: "1000/-",
-                bn: "১০০০/-",
-            },
-            features: {
-                en: [
-                    "2-month comprehensive course",
-                    "5 projects: From design to HTML & CSS conversion",
-                    "Live classes",
-                    "Real-time problem solving",
-                    "Hands-on training on email marketing platforms",
-                    "Dark Mode & Accessibility fixes",
-                    "Personal portfolio template creation",
-                    "Recorded videos",
-                    "VS Code Plugin & Chrome Extension provided",
-                    "LinkedIn client hunting training",
-                    "Exclusive certificate for successful candidates!",
-                ],
-                bn: [
-                    "২ মাসের কম্প্রিহেনসিভ কোর্স",
-                    "৫টি প্রোজেক্ট: ডিজাইন থেকে HTML & CSS-এ রূপান্তর",
-                    "লাইভ ক্লাস",
-                    "রিয়েল-টাইম সমস্যা সমাধান",
-                    "ইমেইল মার্কেটিং প্ল্যাটফর্মে হ্যান্ডস-অন ট্রেনিং",
-                    "Dark Mode & Accessibility ফিক্সিং",
-                    "ব্যক্তিগত পোর্টফোলিও টেমপ্লেট তৈরি",
-                    "রেকর্ডেড ভিডিও",
-                    "VS Code Plugin & Chrome Extension প্রদান",
-                    "LinkedIn থেকে ক্লায়েন্ট হান্টিং শিখানো হবে",
-                    "এক্সক্লুসিভ সার্টিফিকেট সফলদের জন্য!",
-                ],
-            },
-            buttonText: {
-                en: "Enroll Now",
-                bn: "এখন নিবন্ধন করুন",
-            },
-            buttonClass: "bg-green-500 hover:bg-green-600",
-        },
-    ];
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -119,6 +24,7 @@ const PricingSection = () => {
         courseType: "",
         courseFee: "",
         transactionNumber: "",
+        couponCode: "",
     });
 
     const handleInputChange = (e) => {
@@ -145,6 +51,7 @@ const PricingSection = () => {
                     courseType: formData.courseType,
                     courseFee: formData.courseFee,
                     transactionNumber: formData.transactionNumber,
+                    couponCode: formData.couponCode,
                 },
                 "9RfB8L3zVRRfMB18w" // Your Public Key
             )
@@ -162,6 +69,7 @@ const PricingSection = () => {
                     courseType: "",
                     courseFee: "",
                     transactionNumber: "",
+                    couponCode: "",
                 });
             })
             .catch((error) => {
@@ -170,6 +78,10 @@ const PricingSection = () => {
                     position: "top-right",
                 });
             });
+        
+          setTimeout(() => {
+              window.location.href = "/";
+          }, 6000);
     };
 
     const [language, setLanguage] = useState("en"); // 'en' for English, 'bn' for Bangla
@@ -181,13 +93,11 @@ const PricingSection = () => {
     return (
         <section
             id="pricing"
-            className="py-20 text-white bg-gradient-to-r from-gray-950 to-gray-900"
+            className="py-20 text-gray-300 bg-gradient-to-r from-gray-950 to-gray-900"
         >
             <div className="container px-4 mx-auto">
                 <h2 className="mb-12 text-3xl font-bold text-center md:text-5xl">
-                    {language === "bn"
-                        ? "মূল্য পরিকল্পনা"
-                        : "Pricing Plans"}{" "}
+                    {language === "bn" ? "মূল্য পরিকল্পনা" : "Pricing Plans"}{" "}
                     <span className="items-center justify-center inline-block">
                         <button
                             className={`w-16 h-6 flex items-center rounded-full p-1 duration-300 ease-in-out transition-colors ${
@@ -214,6 +124,7 @@ const PricingSection = () => {
                         >
                             <h1 className="mb-4 text-2xl font-bold text-center">
                                 {course.title[language]}
+                                 
                             </h1>
                             <h2 className="mb-4 text-3xl font-bold text-center">
                                 <span className="mb-4 text-sm font-bold text-center">
@@ -264,12 +175,20 @@ const PricingSection = () => {
             </div>
 
             {isModalOpen && (
-                <Modal
+                <ModalParent
+                    isOpen={isModalOpen}
                     formData={formData}
                     handleInputChange={handleInputChange}
                     handleSubmit={handleSubmit}
                     closeModal={() => setIsModalOpen(false)}
-                />
+                >
+                    <Modal
+                        formData={formData}
+                        handleInputChange={handleInputChange}
+                        handleSubmit={handleSubmit}
+                        closeModal={() => setIsModalOpen(false)}
+                    />
+                </ModalParent>
             )}
 
             <ToastContainer />
@@ -277,4 +196,4 @@ const PricingSection = () => {
     );
 };
 
-export default PricingSection;
+export default Pricing;

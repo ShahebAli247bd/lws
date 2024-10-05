@@ -7,18 +7,18 @@ const testimonialsData = {
     en: [
         {
             id: 1,
-            name: "John Doe",
-            designation: "Web Developer",
-            image: "https://randomuser.me/api/portraits/men/1.jpg",
+            name: "Adnan Mridha",
+            designation: "Web & Graphic Designer",
+            image: "https://shorturl.at/jm3kH",
             testimonial:
                 "This course helped me enhance my skills in email template design and development!",
             recommendation: "Highly recommend this course!",
         },
         {
             id: 2,
-            name: "Jane Smith",
+            name: "Helal Uddin",
             designation: "Graphic Designer",
-            image: "https://randomuser.me/api/portraits/women/1.jpg",
+            image: "https://shorturl.at/xArwo",
             testimonial:
                 "I learned so much about responsive design and email marketing strategies.",
             recommendation:
@@ -26,9 +26,9 @@ const testimonialsData = {
         },
         {
             id: 3,
-            name: "Alice Johnson",
-            designation: "Marketing Specialist",
-            image: "https://randomuser.me/api/portraits/women/2.jpg",
+            name: "Al-Amin",
+            designation: "Web Developer",
+            image: "https://shorturl.at/o8m36",
             testimonial:
                 "The live classes and hands-on training were invaluable. I feel more confident now!",
             recommendation: "Best investment for my career!",
@@ -37,27 +37,27 @@ const testimonialsData = {
     bn: [
         {
             id: 1,
-            name: "জন ডো",
-            designation: "ওয়েব ডেভেলপার",
-            image: "https://randomuser.me/api/portraits/men/1.jpg",
+            name: "আদনান মৃধা",
+            designation: "ওয়েব এন্ড গ্রাফিক ডিজাইনার",
+            image: "https://shorturl.at/jm3kH",
             testimonial:
                 "এই কোর্সটি আমাকে ইমেইল টেমপ্লেট ডিজাইন এবং ডেভেলপমেন্টের দক্ষতা বাড়াতে সহায়তা করেছে!",
             recommendation: "এই কোর্সটি অবশ্যই সুপারিশ করছি!",
         },
         {
             id: 2,
-            name: "জেন স্মিথ",
+            name: "হেলাল উদ্দিন",
             designation: "গ্রাফিক ডিজাইনার",
-            image: "https://randomuser.me/api/portraits/women/1.jpg",
+            image: "https://shorturl.at/xArwo",
             testimonial:
                 "আমি রেসপনসিভ ডিজাইন এবং ইমেইল মার্কেটিং কৌশল সম্পর্কে অনেক কিছু শিখেছি।",
             recommendation: "আকাঙ্ক্ষী ডিজাইনারদের জন্য অবশ্যই একটি কোর্স!",
         },
         {
             id: 3,
-            name: "অ্যালিস জনসন",
-            designation: "মার্কেটিং বিশেষজ্ঞ",
-            image: "https://randomuser.me/api/portraits/women/2.jpg",
+            name: "আল-আমীন",
+            designation: "ওয়েব ডেভলপার",
+            image: "https://shorturl.at/o8m36",
             testimonial:
                 "লাইভ ক্লাস এবং হাতে-কলমে প্রশিক্ষণ অমূল্য ছিল। আমি এখন আরও আত্মবিশ্বাসী!",
             recommendation: "আমার ক্যারিয়ারের জন্য সেরা বিনিয়োগ!",

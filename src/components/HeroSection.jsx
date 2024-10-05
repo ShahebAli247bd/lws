@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import Modal from "./Modal";
+import Modal from "./ModalParent";
+import Enrollment from "./Modal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ModalParent from "./ModalParent";
 
 const HeroSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,6 +17,7 @@ const HeroSection = () => {
         courseType: "",
         courseFee: "",
         transactionNumber: "",
+        couponCode: "",
     });
 
     const handleInputChange = (e) => {
@@ -41,6 +44,7 @@ const HeroSection = () => {
                     courseType: formData.courseType,
                     courseFee: formData.courseFee,
                     transactionNumber: formData.transactionNumber,
+                    couponCode: formData.couponCode,
                 },
                 "9RfB8L3zVRRfMB18w" // Your Public Key
             )
@@ -58,6 +62,7 @@ const HeroSection = () => {
                     courseType: "",
                     courseFee: "",
                     transactionNumber: "",
+                    couponCode: "",
                 });
             })
             .catch((error) => {
@@ -66,6 +71,10 @@ const HeroSection = () => {
                     position: "top-right", // Updated to string format
                 });
             });
+        
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 6000);
     };
 
     return (
@@ -100,7 +109,7 @@ const HeroSection = () => {
 
                 <div className="text-white md:w-1/3">
                     <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-                        Master Email Template Design & Development
+                        Mastering Email Template Design & Development
                     </h1>
                     <p className="mb-6 text-lg">
                         Learn to create professional, responsive, and dark mode
@@ -118,12 +127,20 @@ const HeroSection = () => {
 
             {/* Modal */}
             {isModalOpen && (
-                <Modal
+                <ModalParent
+                    isOpen={isModalOpen}
                     formData={formData}
                     handleInputChange={handleInputChange}
                     handleSubmit={handleSubmit}
                     closeModal={() => setIsModalOpen(false)}
-                />
+                >
+                    <Modal
+                        formData={formData}
+                        handleInputChange={handleInputChange}
+                        handleSubmit={handleSubmit}
+                        closeModal={() => setIsModalOpen(false)}
+                    />
+                </ModalParent>
             )}
 
             {/* Toast Container */}

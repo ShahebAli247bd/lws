@@ -11,28 +11,23 @@ const sendEmail = (email) => {
             .send(
                 "service_l0gmcbs",
                 "template_2xznh07",
-            // { user_email: email },
+                // { user_email: email },
                 {
-                    from_name: "Shaheb Ali",  // Extract the name before the "@" symbol
-                    to_name: email.split("@")[0],           // Replace with your own name or get from form
-                    to_email: email                  // Pass the email directly to "to_email" field
-                 },
+                    from_name: email.split("@")[0], // Extract the name before the "@" symbol
+                    from_email: email, // Replace with your own name or get from form
+                    to_email: "shahebali247bd@gmail.com", // Pass the email directly to "to_email" field
+                },
                 "9RfB8L3zVRRfMB18w"
             )
             .then((result) => {
-                 toast.success(
-                     `Congratulation! You Subscribe as a ${email}`,
-                     {
-                         position: "top-right", // Updated to string format
-                     }
-                 );
-              
+                toast.success(`Congratulation! You Subscribe as a ${email}`, {
+                    position: "top-right", // Updated to string format
+                });
             })
             .catch((error) => {
-                  toast.error("Failed to send email.", {
-                      position: "top-right", // Updated to string format
-                  });
-               
+                toast.error("Failed to send email.", {
+                    position: "top-right", // Updated to string format
+                });
             });
     } 
       else {

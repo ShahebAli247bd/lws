@@ -50,8 +50,8 @@ const FAQ = () => {
              bn: "কোর্স মেন্টর সম্পর্কে কিছু বলুন।",
          },
          answer: {
-             en: "Our mentor is a highly experienced professional, having worked for over a decade on freelancing platforms like Fiverr, and for global brands such as DELL, MICROSOFT, WUNDERMAN, and more. With expertise in industry standards and outsourcing, you’ll be learning from the best.",
-             bn: "আমাদের মেন্টর একজন অত্যন্ত অভিজ্ঞ পেশাদার, যিনি দশ বছরেরও বেশি সময় ধরে ফ্রিল্যান্সিং প্ল্যাটফর্ম যেমন ফাইভার, এবং ডেল, মাইক্রোসফট, ওয়ান্ডারম্যান এবং আরও অনেক বৈশ্বিক ব্র্যান্ডের জন্য কাজ করেছেন। শিল্প মান এবং আউটসোর্সিংয়ে দক্ষতার সাথে, আপনি সেরা থেকে শিখবেন।",
+             en: "Our mentor is a highly experienced professional, having worked for over a decade in global brands such as DELL, MICROSOFT, WUNDERMAN, WUNDERMANTHOMPSON, GSK and on freelancing platforms like Fiverr. With expertise in industry standards and outsourcing, you’ll be learning from the best.",
+             bn: "আমাদের মেন্টর একজন অত্যন্ত অভিজ্ঞ পেশাজীবী, যিনি DELL, MICROSOFT, WUNDERMAN, WUNDERMAN THOMPSON, GSK-এর মতো আন্তর্জাতিক ব্র্যান্ডে দশকেরও বেশি সময় কাজ করেছেন এবং ফ্রিল্যান্সিং প্ল্যাটফর্ম যেমন Fiverr-এ কাজ করেছেন। শিল্পের মান এবং আউটসোর্সিংয়ে তার বিশেষজ্ঞতা রয়েছে।",
          },
      },
      {
@@ -60,8 +60,8 @@ const FAQ = () => {
              bn: "কোর্স ফি কত?",
          },
          answer: {
-             en: "This course is valued at approximately 4000 BDT, but we offer two options. For the live course, it's just 500 BDT. For the comprehensive package, which includes full mentorship support, access to EDM development software, and an excellence certificate, it’s only 1000 BDT. Incredible value for your career growth!",
-             bn: "এই কোর্সের মূল্য প্রায় ৪০০০ টাকা, তবে আমরা দুটি বিকল্প দিচ্ছি। লাইভ কোর্সের জন্য এটি মাত্র ৫০০ টাকা। সম্পূর্ণ মেন্টরশিপ সহায়তা, ইডিএম ডেভেলপমেন্ট সফটওয়্যার এবং শ্রেষ্ঠত্ব সনদসহ সম্পূর্ণ প্যাকেজের জন্য এটি মাত্র ১০০০ টাকা। আপনার ক্যারিয়ার বৃদ্ধির জন্য অবিশ্বাস্য মূল্য!",
+             en: "Unlock your future with our course! Get the live course for just 500 BDT or the complete mentorship package (including software and a certificate) for only 1,000 BDT—an unbeatable opportunity for your career growth! Invest now and gain unique skills you won't find anywhere else—guaranteed!",
+             bn: "এই কোর্সের মূল্য ৪০০০ টাকা, তবে আমরা দুটি বিকল্প দিচ্ছি। লাইভ কোর্সের জন্য বিশেষ ছাড় দিয়ে এটি মাত্র ৫০০ টাকা। এবং সম্পূর্ণ মেন্টরশিপ সহায়তা, EDM ডেভেলপমেন্ট সফটওয়্যার এবং কৃতিত্বের সনদপত্র সহ সম্পূর্ণ প্যাকেজের জন্য বিশেষ অফারে এটি মাত্র ১০০০ টাকা। আপনার ক্যারিয়ার বৃদ্ধির জন্য অবিশ্বাস্য একটি অফার! ৫০০/- বা ১০০০/- টাকা খুব বেশি টাকা না, কিন্তু আপনি এ কোর্স থেকে যা শিখবেন তা অন্য কোথাও পাবেন না। গ্যারান্টি।",
          },
      },
      {

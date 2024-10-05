@@ -144,7 +144,10 @@ const ProjectSection = () => {
     };
 
     return (
-        <section id="project" className="p-6 py-20 text-white bg-gradient-to-r to-gray-950 from-gray-900">
+        <section
+            id="project"
+            className="p-6 py-20 text-white bg-gradient-to-r to-gray-950 from-gray-900"
+        >
             <div className="px-4 mx-auto ">
                 <h2 className="mb-12 text-3xl font-bold text-center md:text-5xl">
                     {isToggled ? "যে সব " : " All"}
@@ -204,6 +207,12 @@ const ProjectSection = () => {
                                         : project.descriptionEn}
                                 </p>
                             </div>
+                            <button
+                                className="px-4 py-2 text-white bg-gray-800 rounded hover:bg-gray-700"
+                                onClick={closeModal}
+                            >
+                                {isToggled ? "আরও জানুন" : "Learn More"}{" "}
+                            </button>
                         </div>
                     ))}
                 </div>
@@ -231,8 +240,8 @@ const ProjectSection = () => {
                             className="px-4 py-2 mr-4 text-white rounded bg-darkblueish hover:bg-gray-900"
                         >
                             {isToggled
-                                ? "এক্সক্লুসিভ প্রজেক্ট দেখুন"
-                                : "View Exclusive Project"}{" "}
+                                ? "আমাদের এক্সক্লুসিভ কোর্স প্রজেক্ট দেখুন"
+                                : "View Our Exclusive Course Project"}{" "}
                         </a>
                         <button
                             className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"

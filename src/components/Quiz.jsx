@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import html2canvas from "html2canvas"; // For capturing the screenshot as JPG
 import { Chart } from "react-google-charts"; // For chart functionality
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const QuizApp = () => {
+
     const [userInfo, setUserInfo] = useState({
         name: "",
         email: "",
@@ -15,7 +18,7 @@ const QuizApp = () => {
     const [results, setResults] = useState(null);
     const [userScore, setUserScore] = useState(0);
     const [ipBlocked, setIpBlocked] = useState(false); // IP blocking state
-     
+
     const questions = [
         // HTML Questions
         {
@@ -183,8 +186,6 @@ const QuizApp = () => {
         },
     ];
 
-   
-    
     useEffect(() => {
         const previousResult = localStorage.getItem("quizResult");
         const userIP = localStorage.getItem("userIP");
@@ -220,7 +221,7 @@ const QuizApp = () => {
         if (userInfo.name && userInfo.email && userInfo.phone) {
             setStep(2);
         } else {
-            alert("Please fill out all fields.");
+            toast.error("Please fill out all fields.");
         }
     };
 
@@ -229,7 +230,7 @@ const QuizApp = () => {
      */
     const nextQuestion = () => {
         if (selectedAnswer === null) {
-            alert("Please select an answer.");
+            toast.error("Please select an answer.");
             return;
         }
 
@@ -316,33 +317,34 @@ const QuizApp = () => {
             }&body=${encodeURIComponent(mailBody)}`;
 
             if (
-                confirm(
-                    "If your default email client doesn't open, would you like to use Gmail?"
+                toast.info(
+                    "If your default email client doesn't open, Gmail will open with your Quiz Result?"
                 )
             ) {
                 window.open(gmailLink, "_blank");
             }
         }, 2000);
     };
- 
 
     return (
-        <div id="quiz" className="flex flex-col items-center justify-center pt-12 pb-12 text-white quiz-container bg-gradient-to-r from-gray-950 to-gray-900">
-            <h2 className="mb-12 text-3xl font-bold text-center md:text-5xl">
-                Perticipate{" "}
+        <div
+            id="quiz"
+            className="flex flex-col items-center justify-center pt-4 pb-4 text-white quiz-container"
+        >
+            <h2 className="mb-2 text-2xl font-bold text-center md:mb-12 md:text-4xl ">
+                {results ? "Your Result Card" : " Perticipate "} in the
                 <a
-                    href={
-                        "#quiz"
-                    }
-                    
+                    href={"#quiz"}
                     rel="noopener noreferrer"
                     className="text-blue-500 rounded "
                 >
-                    the Quiz
-                </a>
+                    {" "}
+                    Quiz
+                </a>{" "}
+                {results ? "" : " before Enrollment"}
             </h2>
             {step === 1 && (
-                <div className="w-full max-w-md p-6 text-gray-800 bg-white rounded-lg shadow-lg">
+                <div className="max-w-md p-6 text-gray-800 bg-white rounded-lg shadow-lg ">
                     <h2 className="mb-4 text-2xl font-bold text-center text-blue-900">
                         Enter Your Information
                     </h2>
@@ -448,10 +450,10 @@ const QuizApp = () => {
             {step === 3 && results && (
                 <div
                     id="quiz-section"
-                    className="w-full max-w-2xl p-6 mt-8 text-gray-800 bg-white rounded-lg shadow-lg"
+                    className="w-full p-6 mt-8 text-gray-800 bg-white rounded-lg shadow-lg"
                 >
                     <div className="flex items-center justify-center">
-                        <div className="w-full max-w-md text-center rounded-lg shadow-lg ">
+                        <div className="w-full text-center rounded-lg shadow-lg ">
                             <h2 className="mb-4 text-3xl font-bold text-green-600">
                                 {results?.score >= 50
                                     ? "Congratulations!"
@@ -459,8 +461,8 @@ const QuizApp = () => {
                             </h2>
                             <p className="mb-4 text-lg">
                                 {results?.score >= 50
-                                    ? `You Passed! Your scored  ${results?.score} % in the quiz. Great job! Your are Eligible, Enroll now`
-                                    : `Unfortunately You didnot pass the Quiz, You got ${results?.score} % in the quiz. Try again from another Browser!`}
+                                    ? `You Passed! You scored  ${results?.score} % in the quiz. Great job! Your are Eligible, Enroll now`
+                                    : `Unfortunately You didnot pass the Quiz, You got ${results?.score} % in the quiz. Contact with at shahebali247bd@gmail.com`}
                             </p>
                         </div>
                     </div>
@@ -469,13 +471,13 @@ const QuizApp = () => {
                     </h2>
                     <div id="result-section">
                         <p className="mb-2 text-lg font-bold">
-                            Name: {results?.userInfo.name}
+                            Name: {results?.userInfo?.name}
                         </p>
                         <p className="mb-2 text-lg font-bold">
-                            Email: {results?.userInfo.email}
+                            Email: {results?.userInfo?.email}
                         </p>
                         <p className="mb-2 text-lg font-bold">
-                            Phone: {results?.userInfo.phone}
+                            Phone: {results?.userInfo?.phone}
                         </p>
                         <p className="mb-2 text-lg font-bold">
                             Score: {results?.score}%
@@ -494,7 +496,7 @@ const QuizApp = () => {
                             pieHole: 0.4,
                         }}
                         width="100%"
-                        height="300px"
+                        height="180px"
                     />
                 </div>
             )}
@@ -515,6 +517,7 @@ const QuizApp = () => {
                     </button>
                 </div>
             )}
+            <ToastContainer />
         </div>
     );
 };
