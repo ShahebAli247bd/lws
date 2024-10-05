@@ -124,15 +124,15 @@ const Pricing = () => {
                         >
                             <h1 className="mb-4 text-2xl font-bold text-center">
                                 {course.title[language]}
-                                 
                             </h1>
                             <h2 className="mb-4 text-3xl font-bold text-center">
                                 <span className="mb-4 text-sm font-bold text-center">
-                                    এই কোর্সের মূল্য আনুমানিক{" "}
+                                    এই কোর্সের মূল্য{" "}
                                     <span className="text-red-500 line-through">
                                         {course.priceBefore[language]}
                                     </span>{" "}
-                                    টাকা হলেও, এখন
+                                    টাকা হলেও, ফার্স্ট ব্যাচ উপলক্ষে বিশেষ
+                                    ছাড়ে এখন
                                     <span className="text-2xl text-green-500">
                                         {" "}
                                         {course.priceNow[language]}{" "}

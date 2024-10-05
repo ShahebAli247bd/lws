@@ -85,7 +85,7 @@ const FAQ = () => {
     return (
         <div
             id="faq"
-            className="w-full pt-12 pb-12 mx-auto shadow-lg bg-gradient-to-r to-gray-950 from-gray-900"
+            className="w-full pt-12 pb-12 mx-auto shadow-lg bg-gradient-to-r from-gray-950 to-gray-900"
         >
             <div className="container px-4 mx-auto">
                 <h2 className="mb-6 text-3xl font-bold text-center text-blue-400 md:text-5xl">

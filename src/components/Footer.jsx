@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   return (
-      <footer className="p-10 text-white bg-gradient-to-r from-gray-950 to-gray-900">
+      <footer className="p-10 text-white bg-gradient-to-r to-gray-950 from-gray-900">
           <div className="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-4">
               {/* Column 1 - Logo */}
               <div className="flex flex-col">
