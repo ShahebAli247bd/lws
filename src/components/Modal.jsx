@@ -4,10 +4,11 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
       
     
     return (
-        <div className="inset-0 z-50 flex items-center justify-center bg-opacity-50 rounded drop-shadow-md">
+        <div className="inset-0 z-50 flex items-center justify-center bg-opacity-50 rounded  drop-shadow-md">
             <div clasName="w-11/12 p-6 text-gray-600 rounded bg-gradient-to-r from-gray-700 to-gray-800 md:w-1/3">
                 <h2 className="mb-4 text-xl font-bold text-gray-100">
-                    Registration Form
+                    
+                     Registration Form
                 </h2>
                 <form onSubmit={handleSubmit} className="text-gray-600">
                     <div className="mb-4">

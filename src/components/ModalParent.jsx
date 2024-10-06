@@ -40,11 +40,11 @@ const ModalParent = ({
     if (!isOpen) return null; // Don't render modal if not open
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center w-auto px-4 bg-gray-400 bg-opacity-50">
+        <div className="relative inset-0 z-50 flex items-center justify-center w-auto px-4 bg-gray-400 bg-opacity-50 md:fixed">
             <div className="fixed inset-0 opacity-50"></div>
             <div className="relative z-10 w-full p-8 rounded-lg shadow-lg md:w-1/2 bg-gradient-to-r from-gray-800 to-gray-900">
                 <button
-                    className="absolute flex items-center justify-center w-4 h-4 text-gray-100 bg-red-500 rounded-full top-10 right-10 md:top-2 md:right-2 hover:text-white hover:bg-red-800"
+                    className="absolute flex items-center justify-center w-4 h-4 text-gray-100 bg-red-500 rounded-full top-2 right-2 md:top-2 md:right-2 hover:text-white hover:bg-red-800"
                     onClick={closeModal}
                 >
                     &times;
