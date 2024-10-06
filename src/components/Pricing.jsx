@@ -156,9 +156,9 @@ const SHEET_RANGE = import.meta.env.VITE_SHEET_RANGE;
             });
 
             // Optionally redirect after a delay
-            //    setTimeout(() => {
-            //        window.location.href = "/";
-            //    }, 6000);
+               setTimeout(() => {
+                   window.location.href = "/";
+               }, 6000);
         } catch (error) {
             console.error("Failed to submit form:", error);
             toast.error("Failed to submit form.", {

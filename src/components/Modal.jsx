@@ -4,11 +4,10 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
       
     
     return (
-        <div className="inset-0 z-50 flex items-center justify-center bg-opacity-50 rounded  drop-shadow-md">
+        <div className="inset-0 z-50 flex items-center justify-center bg-opacity-50 rounded drop-shadow-md">
             <div clasName="w-11/12 p-6 text-gray-600 rounded bg-gradient-to-r from-gray-700 to-gray-800 md:w-1/3">
                 <h2 className="mb-4 text-xl font-bold text-gray-100">
-                    
-                     Registration Form
+                    Registration Form
                 </h2>
                 <form onSubmit={handleSubmit} className="text-gray-600">
                     <div className="mb-4">
@@ -19,6 +18,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                             value={formData.name}
                             onChange={handleInputChange}
                             required
+                            placeholder="Name"
                             className="w-full p-2 border border-gray-300 rounded"
                         />
                     </div>
@@ -27,6 +27,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="email"
                             name="email"
+                            placeholder="Email"
                             value={formData.email}
                             onChange={handleInputChange}
                             required
@@ -40,6 +41,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="tel"
                             name="mobile"
+                            placeholder="Mobile"
                             value={formData.mobile}
                             onChange={handleInputChange}
                             required
@@ -51,6 +53,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="text"
                             name="location"
+                            placeholder="Location"
                             value={formData.location}
                             onChange={handleInputChange}
                             required
@@ -64,6 +67,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="text"
                             name="education"
+                            placeholder="Highest Education"
                             value={formData.education}
                             onChange={handleInputChange}
                             required
@@ -77,6 +81,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="text"
                             name="courseType"
+                            placeholder="Course Type (Live/Comprehensive)"
                             value={formData.courseType}
                             onChange={handleInputChange}
                             required
@@ -91,6 +96,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="text"
                             name="courseFee"
+                            placeholder="Course Fee (1000/- or 500/-) depending on your plan"
                             value={formData.courseFee}
                             onChange={handleInputChange}
                             required
@@ -104,6 +110,7 @@ const Modal = ({ formData, handleInputChange, handleSubmit, closeModal }) => {
                         <input
                             type="text"
                             name="transactionNumber"
+                            placeholder="BKash/Nagad Transaction ID"
                             value={formData.transactionNumber}
                             onChange={handleInputChange}
                             required

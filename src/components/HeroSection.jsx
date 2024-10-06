@@ -5,6 +5,7 @@ import Enrollment from "./Modal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ModalParent from "./ModalParent";
+import ScrollDownButton from "./ScrollDownButton";
 
 const HeroSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -144,7 +145,9 @@ const HeroSection = () => {
             )}
 
             {/* Toast Container */}
+
             <ToastContainer />
+            <ScrollDownButton />
         </section>
     );
 };
