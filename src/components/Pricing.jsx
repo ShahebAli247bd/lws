@@ -9,65 +9,24 @@ import { courses } from '../data/Course'
 
 import {gapi} from 'gapi-script';
 
-const GOOGLE_SHEET_ID = 'your-google-sheet-id';
-const GOOGLE_API_KEY = 'your-google-api-key';
-const GOOGLE_CLIENT_ID = 'your-google-client-id';
-const SHEET_RANGE = 'Sheet1!A1:H1'; // Adjust range based on your columns
 
 
 const Pricing = () => {
     const [isToggled, setIsToggled] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleToggle = () => {
         setIsToggled(!isToggled);
     };
 
-    /** Google Sheed data save Start, fn called in submit handler*/
-    const saveDataToGoogleSheets = async () => {
-        // Initialize gapi and authorize the user
-        gapi.load("client:auth2", async () => {
-            await gapi.client.init({
-                apiKey: GOOGLE_API_KEY,
-                clientId: GOOGLE_CLIENT_ID,
-                discoveryDocs: [
-                    "https://sheets.googleapis.com/$discovery/rest?version=v4",
-                ],
-                scope: "https://www.googleapis.com/auth/spreadsheets",
-            });
-
-            const values = [
-                [
-                    formData.name,
-                    formData.email,
-                    formData.mobile,
-                    formData.location,
-                    formData.education,
-                    formData.courseType,
-                    formData.courseFee,
-                    formData.transactionNumber,
-                    formData.couponCode,
-                ],
-            ];
-
-            const request = {
-                spreadsheetId: GOOGLE_SHEET_ID,
-                range: SHEET_RANGE,
-                valueInputOption: "RAW",
-                resource: { values },
-            };
-
-            try {
-                await gapi.client.sheets.spreadsheets.values.append(request);
-                toast.success("Data saved successfully!");
-            } catch (err) {
-                toast.error("Error saving data: ", err);
-            }
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
         });
     };
 
-    /** Google Sheed data save End, fn called in submit handler*/
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -80,19 +39,86 @@ const Pricing = () => {
         couponCode: "",
     });
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+    /**
+     * Google Spread Sheet Saved Enroll Data
+     */
+    // Access environment variables
+const GOOGLE_SHEET_ID = import.meta.env.VITE_GOOGLE_SHEET_ID;
+const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+const SHEET_RANGE = import.meta.env.VITE_SHEET_RANGE;
+    
+    const saveDataToGoogleSheets = async () => {
+        if (typeof gapi === "undefined") {
+            toast.error("Google API not loaded.");
+            return;
+        }
+
+        try {
+            await gapi.load("client:auth2", async () => {
+                await gapi.auth2.init({
+                    apiKey: GOOGLE_API_KEY,
+                    clientId: GOOGLE_CLIENT_ID,
+                    scope: "https://www.googleapis.com/auth/spreadsheets",
+                    discoveryDocs: [
+                        "https://sheets.googleapis.com/$discovery/rest?version=v4",
+                    ],
+                });
+
+                // const authInstance = gapi.auth2.getAuthInstance();
+                // await authInstance.signIn();
+
+                const values = [
+                    [
+                        formData.name,
+                        formData.email,
+                        formData.mobile,
+                        formData.location,
+                        formData.education,
+                        formData.courseType,
+                        formData.courseFee,
+                        formData.transactionNumber,
+                        formData.couponCode,
+                    ],
+                ];
+
+                const request = {
+                    spreadsheetId: GOOGLE_SHEET_ID,
+                    range: SHEET_RANGE, // Dynamic column range
+                    valueInputOption: "RAW",
+                    insertDataOption: "INSERT_ROWS", // Appends to next row
+                    resource: { values },
+                };
+
+                const response =
+                    await gapi.client.sheets.spreadsheets.values.append(
+                        request
+                    );
+                if (response.status === 200) {
+                    toast.success(
+                        "Congratulation, Your information saved successfully!"
+                    );
+                }
+            });
+        } catch (err) {
+            console.error("Error saving data:", err);
+            toast.error(`Error saving data: ${err.message}`);
+        }
     };
+    /**
+     * Google Spread Sheet Saved Enroll Data END
+     */
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    /**
+     * HandleSubmit form
+     * @param {formObject} e
+     */
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
 
-        emailjs
-            .send(
+        try {
+            // Send email using emailjs (assuming this works synchronously)
+            await emailjs.send(
                 "service_l0gmcbs", // Your Service ID
                 "template_hqb9ivo", // Your Template ID
                 {
@@ -107,35 +133,38 @@ const Pricing = () => {
                     couponCode: formData.couponCode,
                 },
                 "9RfB8L3zVRRfMB18w" // Your Public Key
-            )
-            .then((result) => {
-                toast.success("Registration successful!", {
-                    position: "top-right",
-                });
-                setIsModalOpen(false); // Close modal
-                setFormData({
-                    name: "",
-                    email: "",
-                    mobile: "",
-                    location: "",
-                    education: "",
-                    courseType: "",
-                    courseFee: "",
-                    transactionNumber: "",
-                    couponCode: "",
-                });
-                saveDataToGoogleSheets(); // Save data to Google Sheets
-            })
-            .catch((error) => {
-                console.error("Failed to send email:", error);
-                toast.error("Failed to send email.", {
-                    position: "top-right",
-                });
+            );
+            toast.success("Registration successful!", {
+                position: "top-right",
             });
 
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 6000);
+            // Save data to Google Sheets
+            await saveDataToGoogleSheets();
+
+            // Clear the form data and close the modal
+            setIsModalOpen(false);
+            setFormData({
+                name: "",
+                email: "",
+                mobile: "",
+                location: "",
+                education: "",
+                courseType: "",
+                courseFee: "",
+                transactionNumber: "",
+                couponCode: "",
+            });
+
+            // Optionally redirect after a delay
+            //    setTimeout(() => {
+            //        window.location.href = "/";
+            //    }, 6000);
+        } catch (error) {
+            console.error("Failed to submit form:", error);
+            toast.error("Failed to submit form.", {
+                position: "top-right",
+            });
+        }
     };
 
     const [language, setLanguage] = useState("en"); // 'en' for English, 'bn' for Bangla
