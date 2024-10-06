@@ -4,16 +4,7 @@ import Modal from "./Modal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ModalParent from "./ModalParent";
-import { courses } from '../data/Course'
-
-
-import gapi from 'gapi-script';
-
-const GOOGLE_SHEET_ID = 'your-google-sheet-id';
-const GOOGLE_API_KEY = 'your-google-api-key';
-const GOOGLE_CLIENT_ID = 'your-google-client-id';
-const SHEET_RANGE = 'Sheet1!A1:H1'; // Adjust range based on your columns
-
+import {courses} from '../data/Course'
 
 const Pricing = () => {
     const [isToggled, setIsToggled] = useState(false);
@@ -22,51 +13,7 @@ const Pricing = () => {
         setIsToggled(!isToggled);
     };
 
-    /** Google Sheed data save Start, fn called in submit handler*/
-    const saveDataToGoogleSheets = async () => {
-        // Initialize gapi and authorize the user
-        gapi.load("client:auth2", async () => {
-            await gapi.client.init({
-                apiKey: GOOGLE_API_KEY,
-                clientId: GOOGLE_CLIENT_ID,
-                discoveryDocs: [
-                    "https://sheets.googleapis.com/$discovery/rest?version=v4",
-                ],
-                scope: "https://www.googleapis.com/auth/spreadsheets",
-            });
-
-            const values = [
-                [
-                    formData.name,
-                    formData.email,
-                    formData.mobile,
-                    formData.location,
-                    formData.education,
-                    formData.courseType,
-                    formData.courseFee,
-                    formData.transactionNumber,
-                    formData.couponCode,
-                ],
-            ];
-
-            const request = {
-                spreadsheetId: GOOGLE_SHEET_ID,
-                range: SHEET_RANGE,
-                valueInputOption: "RAW",
-                resource: { values },
-            };
-
-            try {
-                await gapi.client.sheets.spreadsheets.values.append(request);
-                toast.success("Data saved successfully!");
-            } catch (err) {
-                toast.error("Error saving data: ", err);
-            }
-        });
-    };
-
-    /** Google Sheed data save End, fn called in submit handler*/
-
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -124,7 +71,6 @@ const Pricing = () => {
                     transactionNumber: "",
                     couponCode: "",
                 });
-                saveDataToGoogleSheets(); // Save data to Google Sheets
             })
             .catch((error) => {
                 console.error("Failed to send email:", error);
@@ -132,10 +78,10 @@ const Pricing = () => {
                     position: "top-right",
                 });
             });
-
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 6000);
+        
+          setTimeout(() => {
+              window.location.href = "/";
+          }, 6000);
     };
 
     const [language, setLanguage] = useState("en"); // 'en' for English, 'bn' for Bangla
@@ -185,8 +131,8 @@ const Pricing = () => {
                                     <span className="text-red-500 line-through">
                                         {course.priceBefore[language]}
                                     </span>{" "}
-                                    টাকা হলেও, ফার্স্ট ব্যাচ উপলক্ষে বিশেষ ছাড়ে
-                                    এখন
+                                    টাকা হলেও, ফার্স্ট ব্যাচ উপলক্ষে বিশেষ
+                                    ছাড়ে এখন
                                     <span className="text-2xl text-green-500">
                                         {" "}
                                         {course.priceNow[language]}{" "}
