@@ -7,9 +7,9 @@ import ModalParent from "./ModalParent";
 import { courses } from '../data/Course'
 
 
-import gapi from 'gapi-script';
+import {gapi} from 'gapi-script';
 
-const GOOGLE_SHEET_ID = 'your-google-sheet-id-add';
+const GOOGLE_SHEET_ID = 'your-google-sheet-id';
 const GOOGLE_API_KEY = 'your-google-api-key';
 const GOOGLE_CLIENT_ID = 'your-google-client-id';
 const SHEET_RANGE = 'Sheet1!A1:H1'; // Adjust range based on your columns
