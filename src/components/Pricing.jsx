@@ -199,7 +199,7 @@ const SHEET_RANGE = import.meta.env.VITE_SHEET_RANGE;
                     </span>
                 </h2>
 
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 flex justify-center item-center">
                     {courses.map((course) => (
                         <div
                             key={course.id}
