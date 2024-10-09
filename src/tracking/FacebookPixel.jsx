@@ -25,12 +25,12 @@ const FacebookPixel = () => {
             "script",
             "https://connect.facebook.net/en_US/fbevents.js"
         );
-        fbq("init", "3326218081018142");
-        fbq("track", "PageView");
-        fbq("track", "Contact");
-        fbq("track", "CompleteRegistration");
-        fbq("track", "Lead");
-        fbq("track", "SubmitApplication");
+        // fbq("init", "3326218081018142");
+        // fbq("track", "PageView");
+        // fbq("track", "Contact");
+        // fbq("track", "CompleteRegistration");
+        // fbq("track", "Lead");
+        // fbq("track", "SubmitApplication");
         fbq("track", "ViewContent");
 
         <noscript>
